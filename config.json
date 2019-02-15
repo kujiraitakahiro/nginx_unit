@@ -1,0 +1,61 @@
+{
+	"listeners": {
+		"*:8081": {
+			"application": "blogs_php"
+		},
+    "*:8082": {
+      "application": "blogs_perl"
+    },
+    "*:8083": {
+      "application": "blogs_python"
+    },
+    "*:8084": {
+      "application": "blogs_ruby"
+    },
+    "*:8085": {
+      "application": "blogs_go"
+    },
+    "*:8086": {
+      "application": "blogs_nodejs"
+    }
+	},
+
+	"applications": {
+		"blogs_php": {
+			"type": "php",
+			"processes": 5,
+			"root": "/www/blogs/scripts",
+			"index": "index.php"
+		},
+    "blogs_perl": {
+      "type": "perl",
+      "processes": 5,
+      "root": "/www/blogs/scripts",
+      "index": "index.pl"
+    },
+    "blogs_python": {
+			"type": "python",
+			"processes": 5,
+			"root": "/www/blogs/scripts",
+			"index": "index.py"
+		},
+    "blogs_ruby": {
+			"type": "ruby",
+			"processes": 5,
+			"root": "/www/blogs/scripts",
+			"index": "index.rb"
+		},
+    "blogs_go": {
+			"type": "go",
+			"processes": 5,
+			"executable": "/www/blogs/scripts/index.go",
+			"arguments": ["--tmp-files", "/tmp/go-cache"]
+		},
+    "blogs_nodejs": {
+			"type": "external",
+			"processes": 5,
+			"executable": "/www/blogs/scripts/index.js"
+		}
+
+	}
+}
