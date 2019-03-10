@@ -1,0 +1,32 @@
+{
+	"listeners": {
+		"*:8888": {
+			"pass": "applications/blogs-php"
+		},
+
+		"*:8887": {
+			"pass": "applications/blogs-perl"
+		}
+	},
+
+	"applications": {
+		"blogs-php": {
+			"type": "php",
+			"processes": 5,
+			"root": "/www/blogs/scripts",
+			"index": "index.php"
+		},
+
+		"blogs-perl": {
+			"type": "perl",
+			"processes": {
+				"max": 10,
+				"spare": 5,
+				"idle_timeout": 20
+			},
+			"working_directory": "/www/store/",
+			"script": "index.pl"
+		}
+	}
+
+}
