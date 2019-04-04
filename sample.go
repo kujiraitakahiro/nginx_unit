@@ -3,10 +3,11 @@ package main
 import (
   "fmt"
   "net/http"
+  //nginx unitで使う場合、"nginx/unit" もimportするべし
 )
 
 func handler(w http.ResponseWriter, r *http.Request) {
-  fmt.Fprintf(w, "Test G0 for nginx unit")
+  fmt.Fprintf(w, "Test Go for nginx unit")
 }
 
 func main() {
